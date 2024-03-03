@@ -12,9 +12,8 @@
     <header>
         <h1>Certificate Generator</h1>
     </header>
-    <br><br>
-
     <form>
+        <br><br>
         <canvas id="canvas" height="350px" width="500px" style="border:1px solid #000000"></canvas>
 
         <div id="name">
@@ -33,25 +32,26 @@
         </div>
 
         <div id="prize">
-            <label for="prize">Select Prize</label>
-        </div><br><br>
-
+            <label for="prize">Select Prize</label><br><br>
+        </div>
         <input type="radio" id="option1" name="options" value="First">
         <label for="option1">First</label>
-    
+
         <input type="radio" id="option2" name="options" value="Second">
         <label for="option2">Second</label>
-    
+
         <input type="radio" id="option3" name="options" value="Third">
         <label for="option3">Third</label>
 
     </form>
-   
+
+
     <div class="button-container">
         <button class="b4" onclick="drawImage()">CREATE CERTIFICATE</button>
-        <button href="#" id="download-btn">DOWNLOAD</button>
+       <button class="b4"> <a  href="#" id="download-btn" download>DOWNLOAD</a></button><br><br>
+
     </div>
-    
+
     <script>
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');
@@ -59,35 +59,47 @@
         var downloadBtn = document.getElementById('download-btn')
         image.crossOrigin = "anonymous";
         image.src = 'Certi1.png';
-        image.onload = function () {
+        image.onload = function() {
             drawImage();
         };
+
         function drawImage() {
-            console.log(document.getElementById("date1"));
+            // Clear the canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw the certificate image
             ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-            ctx.font = '40px monotype corsiva';
+
+            // Draw the name from the 'nameInput' input field
+            ctx.font = '35px monotype corsiva';
             ctx.fillStyle = '#29e';
-            ctx.fillText(document.getElementById('nameInput').value,200, 180);
+            ctx.fillText(document.getElementById('nameInput').value, 200, 180);
+
+            // Draw the event from the 'fieldInput' input field
             ctx.font = '18px monotype corsiva';
             ctx.fillStyle = '#29e';
             ctx.fillText(document.getElementById('fieldInput').value, 245, 210);
-            ctx.font = '15px monotype corsiva';
+
+            ctx.font = '14px monotype corsiva';
             ctx.fillStyle = '#29e';
             var dateComponents = document.getElementById('date1').value;
             dateComponents = dateComponents.split("-").reverse().join("-");
-            ctx.fillText(dateComponents, 365, 210); 
+            ctx.fillText(dateComponents, 365, 210);
+
             var selectedOption = document.querySelector('input[name="options"]:checked');
             if (selectedOption) {
                 ctx.font = '18px monotype corsiva';
                 ctx.fillStyle = '#29e';
-                ctx.fillText(selectedOption.value, 148, 210); 
+                ctx.fillText(selectedOption.value, 160, 210); // Adjust the coordinates as needed
             }
         }
-        downloadBtn.addEventListener('click', function () {
-        downloadBtn.href = canvas.toDataURL('image/jpg')
-        downloadBtn.download = 'Certificate - ' + nameInput.value
-})
+
+        downloadBtn.addEventListener('click', function() {
+            downloadBtn.href = canvas.toDataURL('image/jpg')
+            downloadBtn.download = 'Certificate - ' + document.getElementById('nameInput').value + '.jpg';
+        })
     </script>
 </body>
+
 </html>
+

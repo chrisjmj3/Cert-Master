@@ -103,6 +103,10 @@ form {
     width: 190px;
 }
 
+.b5{
+    margin-left: 10px;
+}
+
 .b1:hover {
     background-color: #9F8EBC;
 }
@@ -138,7 +142,7 @@ footer {
     border-radius: 15px;
     height: 30px;
     width: 190px; 
-    margin-left: 50px;
+    /* margin-left: 50px; */
 }
 #download-btn:hover {
     background-color: #946165;
