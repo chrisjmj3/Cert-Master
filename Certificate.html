@@ -45,7 +45,10 @@
 
     </form>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c9f322357cac276cabbd23371ef646ae4090ee07
     <div class="button-container">
         <button class="b4" onclick="drawImage()">CREATE CERTIFICATE</button>
        <button class="b4"> <a  href="#" id="download-btn" download>DOWNLOAD</a></button><br><br>
@@ -74,8 +77,11 @@
             ctx.font = '35px monotype corsiva';
             ctx.fillStyle = '#29e';
             ctx.fillText(document.getElementById('nameInput').value, 200, 180);
+<<<<<<< HEAD
 
             // Draw the event from the 'fieldInput' input field
+=======
+>>>>>>> c9f322357cac276cabbd23371ef646ae4090ee07
             ctx.font = '18px monotype corsiva';
             ctx.fillStyle = '#29e';
             ctx.fillText(document.getElementById('fieldInput').value, 245, 210);
@@ -85,11 +91,15 @@
             var dateComponents = document.getElementById('date1').value;
             dateComponents = dateComponents.split("-").reverse().join("-");
             ctx.fillText(dateComponents, 365, 210);
+<<<<<<< HEAD
 
+=======
+>>>>>>> c9f322357cac276cabbd23371ef646ae4090ee07
             var selectedOption = document.querySelector('input[name="options"]:checked');
             if (selectedOption) {
                 ctx.font = '18px monotype corsiva';
                 ctx.fillStyle = '#29e';
+<<<<<<< HEAD
                 ctx.fillText(selectedOption.value, 160, 210); // Adjust the coordinates as needed
             }
         }
@@ -97,9 +107,21 @@
         downloadBtn.addEventListener('click', function() {
             downloadBtn.href = canvas.toDataURL('image/jpg')
             downloadBtn.download = 'Certificate - ' + document.getElementById('nameInput').value + '.jpg';
+=======
+                ctx.fillText(selectedOption.value, 148, 210);
+            }
+        }
+        downloadBtn.addEventListener('click', function() {
+            downloadBtn.href = canvas.toDataURL('image/jpg')
+            downloadBtn.download = 'Certificate - ' + nameInput.value
+>>>>>>> c9f322357cac276cabbd23371ef646ae4090ee07
         })
     </script>
 </body>
 
+<<<<<<< HEAD
 </html>
 
+=======
+</html>
+>>>>>>> c9f322357cac276cabbd23371ef646ae4090ee07
