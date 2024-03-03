@@ -31,3 +31,4 @@ cd Cert-Master
 3. Open the `Certificate.html` file in your web browser to use the Certificate Generator.
 
 ##Demo
+https://cert-master.netlify.app/
